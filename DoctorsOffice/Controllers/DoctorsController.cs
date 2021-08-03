@@ -38,6 +38,7 @@ namespace DoctorsOffice.Controllers
     {
       var thisDoctor = _db.Doctors
           .Include(doctor => doctor.JoinEntities)
+          // second function data is iterablewhatever<DoctorPatient>
           .ThenInclude(join => join.Patient)
           .FirstOrDefault(doctor => doctor.DoctorId == id);
       return View(thisDoctor);
