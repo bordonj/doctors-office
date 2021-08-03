@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model DoctorsOffice.Models.Specialty
+@if (@ViewBag.List.Count == 0)
+{
+  <h3>No doctorss have been added yet!</h3>
+  <h3>Please add stylist before adding a client</h3>
+  <p>@Html.ActionLink("Add Stylist", "Index", "Stylists")</p>
+} else 
+{
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name, new {required = "required"})
+
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description, new {required = "required"})
+
+    @Html.LabelFor(model => model.Doctor)
+    @Html.DropDownList("DoctorId")
+
+    <input type="submit" value="Add new item" class="btn" />
+  }
+} 
+
+<p>@Html.ActionLink("Show all Specialties", "Index")</p>
+<p>@Html.ActionLink("See all Doctors", "Index", "Doctors")</p>

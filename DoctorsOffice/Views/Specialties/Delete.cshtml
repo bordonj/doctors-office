@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model DoctorsOffice.Models.Specialty
+
+<h2>Are you sure you want to delete this specialty?</h2>
+
+<h4>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h4>
+@using (Html.BeginForm())
+{
+  <input type="submit" class="btn" value="Delete" />
+}
+@Html.ActionLink("Back to specialties", "Index")
