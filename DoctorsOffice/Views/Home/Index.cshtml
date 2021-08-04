@@ -3,6 +3,14 @@
 }
 
 <h1>Welcome to the Doctors Office management!</h1>
-<p>@Html.ActionLink("See all Patients", "Index", "Patients")</p> 
+<p>
+  <a
+    asp-action="Index"
+    asp-controller="Patients"
+    class="btn btn-primary"
+  >See all Patients</a>
+</p> 
 <p>@Html.ActionLink("See all Doctors", "Index", "Doctors")</p>
 <p>@Html.ActionLink("See all specialties", "Index", "Specialties")</p>
+
+@* tag helpers! need the _ViewImports.cshtml *@
