@@ -17,7 +17,10 @@ namespace DoctorsOffice.Controllers
 
     public ActionResult Index()
     {
-      List<Doctor> model = _db.Doctors.ToList();
+      List<Doctor> model = _db.Doctors
+        .Include(doctor => doctor.JoinEntities)
+        .ThenInclude(join => join.Patient)
+        .ToList(); // now ever single doctor in list will have linked entities
       return View(model);
     }
 

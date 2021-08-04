@@ -1,4 +1,4 @@
- @{
+@{
   Layout = "_Layout";
 }
 
@@ -7,7 +7,6 @@
 <h2>Doctor Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-@using DoctorsOffice.Models;
 
 <h3>@Html.DisplayNameFor(model => model.Specialty): @Html.DisplayFor(model => model.Specialty)</h3>
 
@@ -21,11 +20,15 @@ else
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
-    <li>@join.Patient.Name</li>
+    for (int i = 0; i <= 400; i++)
+    {
+      <li>@join.Patient.Name</li>
+    }
+    
   }
   </ul>
 }
-<li>@Model.JoinEntities.Count</li>
+<li>@(Model.JoinEntities.Count + 40000)</li>
 
 <p>@Html.ActionLink("Add Specialty", "Create", "Specialties")</p>
 <p>@Html.ActionLink("Back to Doctors", "Index")</p>
