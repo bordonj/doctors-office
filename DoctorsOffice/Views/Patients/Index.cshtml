@@ -17,4 +17,13 @@
   <li>@Html.ActionLink($"{patient.Name}", "Details", new { id = patient.PatientId })</li>
 }
 
+<p>
+  <a
+    asp-action="Index"
+    asp-controller="Home"
+    class="btn btn-primary"
+  >Home<i class="bi bi-moon-fill"></i>
+</a>
+</p> 
+
 <p>@Html.ActionLink("Add new patient", "Create")</p> 

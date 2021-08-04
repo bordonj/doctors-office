@@ -2,15 +2,31 @@
   Layout = "_Layout";
 }
 
-<h1>Welcome to the Doctors Office management!</h1>
+<h1><i class="bi bi-suit-spade-fill"></i>Welcome to the Doctors Office management!<i class="bi bi-suit-club-fill"></i>
+</h1>
 <p>
   <a
     asp-action="Index"
     asp-controller="Patients"
     class="btn btn-primary"
-  >See all Patients</a>
+  >See all Patients <i class="bi bi-sun"></i></a>
 </p> 
-<p>@Html.ActionLink("See all Doctors", "Index", "Doctors")</p>
-<p>@Html.ActionLink("See all specialties", "Index", "Specialties")</p>
+<p>
+  <a
+    asp-action="Index"
+    asp-controller="Doctors"
+    class="btn btn-primary"
+  >See all Doctors<i class="bi bi-moon-fill"></i>
+</a>
+</p> 
+<p>
+  <a
+    asp-action="Index"
+    asp-controller="Specialties"
+    class="btn btn-primary"
+  >See all Doctors<i class="bi bi-bullseye"></i>
+
+</a>
+</p> 
 
 @* tag helpers! need the _ViewImports.cshtml *@
